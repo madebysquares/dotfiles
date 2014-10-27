@@ -14,6 +14,10 @@ end
 # VIM Bundles
 BUNDLES = {
 	"wincent" => "Command-T",
+	"junegunn" => "fzf",
+	"yegappan" => "mru",
+	"scrooloose" => "nerdtree",
+	"ervandew" => "supertab"
 }
 
 desc 'Install these config files.'
@@ -21,6 +25,7 @@ task :install do
 	step "Installing bundles"
 	BUNDLES.each do |name, repo|
 		puts "cloning: "+name+"/"+repo
+		install_github_bundle name, repo
 	end
 end
 
