@@ -7,7 +7,7 @@ end
 
 def install_github_bundle(user, package)
   unless File.exist? File.expand_path("~/.vim/bundle/#{package}")
-		sh "git clone https://github.com/#{user}/#{package} ~/.vim/bundle/#{package}"
+		sh "git clone git@github.com:#{user}/#{package}.git ~/.vim/bundle/#{package}"
 	end
 end
 	
@@ -17,7 +17,8 @@ BUNDLES = {
 	"junegunn" => "fzf",
 	"yegappan" => "mru",
 	"scrooloose" => "nerdtree",
-	"ervandew" => "supertab"
+	"ervandew" => "supertab",
+	"faith" => "vim-go",
 }
 
 desc 'Install these config files.'
