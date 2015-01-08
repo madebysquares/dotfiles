@@ -1,0 +1,17 @@
+# shell
+set-option -g default-shell /bin/bash
+
+# bindings -----------
+unbind C-b
+set -g prefix C-a
+
+# Navigate around panes easily using vim-like keybindings
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# improve colors
+set -g default-terminal "screen-256color"
+
+
