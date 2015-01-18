@@ -12,7 +12,8 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 
 set rtp+=~/.vim/bundle/fzf
 
-map <C-n> :NERDTreeToggle<CR>
+map <c-e> :NERDTreeToggle<cr>
+map <c-f> :FZF<cr>
 
 map <c-l> :tabn<cr> 
 map <c-h> :tabp<cr> 

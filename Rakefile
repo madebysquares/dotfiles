@@ -18,7 +18,8 @@ BUNDLES = {
 	"yegappan" => "mru",
 	"scrooloose" => "nerdtree",
 	"ervandew" => "supertab",
-	"faith" => "vim-go",
+	#"faith" => "vim-go",
+	"kchmck" => "vim-coffee-script",
 }
 
 desc 'Install these config files.'
