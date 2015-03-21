@@ -20,6 +20,7 @@ BUNDLES = {
 	"ervandew" => "supertab",
 	#"faith" => "vim-go",
 	"kchmck" => "vim-coffee-script",
+	"vim-ruby" => "vim-ruby",
 }
 
 desc 'Install these config files.'
