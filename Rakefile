@@ -18,9 +18,9 @@ BUNDLES = {
 	"yegappan" => "mru",
 	"scrooloose" => "nerdtree",
 	"ervandew" => "supertab",
-	#"faith" => "vim-go",
+	"madebysquares" => "vim-go",
 	"kchmck" => "vim-coffee-script",
-	"vim-ruby" => "vim-ruby",
+	"madebysquares" => "vim-ruby",
 }
 
 desc 'Install these config files.'
