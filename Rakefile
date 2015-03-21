@@ -25,6 +25,12 @@ BUNDLES = {
 
 desc 'Install these config files.'
 task :install do
+  step "Setting up the symlink paths"
+  puts "creating .vimrc"
+  sh "ln -fs ~/dotfiles/vim/vimrc ~/.vimrc"
+  puts "setting .vim folder"
+  sh "ln -fs ~/dotfiles/vim/ ~/.vim"
+
   step "Installing bundles"
   BUNDLES.each do |name, repo|
     puts "cloning: "+name+"/"+repo
