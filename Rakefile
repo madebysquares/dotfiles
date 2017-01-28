@@ -10,7 +10,7 @@ def install_github_bundle(user, package)
     sh "git clone git@github.com:#{user}/#{package}.git ~/.vim/bundle/#{package}"
   end
 end
-	
+
 # VIM Bundles
 BUNDLES = {
   "wincent" => "Command-T",
@@ -21,6 +21,9 @@ BUNDLES = {
   "madebysquares" => "vim-go",
   "kchmck" => "vim-coffee-script",
   "madebysquares" => "vim-ruby",
+  "madebysquares" => "vim-autoformat-rails",
+  "rking" => "ag.vim",
+  "tpope" => "vim-rails"
 }
 
 desc 'Install these config files.'
@@ -39,4 +42,3 @@ task :install do
 end
 
 task :default => :install
-

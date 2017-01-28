@@ -30,3 +30,14 @@ set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
+
+let g:ag_working_path_mode="r"
+
+" Formatting, indentation and tabbing
+set autoindent smartindent
+set smarttab                    " Make <tab> and <backspace> smarter
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set textwidth=80
+set formatoptions-=t formatoptions+=croql
