@@ -3,13 +3,23 @@ set-option -g default-shell /bin/bash
 
 # bindings -----------
 unbind C-b
-set -g prefix C-a
+set -g prefix C-Space
+bind Space send-prefix
+
+bind Space copy-mode
+bind C-Space copy-mode
 
 # Navigate around panes easily using vim-like keybindings
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+
+bind j split-window -v
+bind C-j split-window -v
+
+bind l split-window -h
+bind C-l split-window -h
 
 # improve colors
 set -g default-terminal "screen-256color"

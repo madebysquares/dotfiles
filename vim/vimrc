@@ -1,33 +1,62 @@
-call pathogen#infect('bundle/{}')
-call pathogen#helptags()
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
 
-syntax on
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+nmap <Leader><Leader> V
+
+nmap <Leader>np :set paste<CR>
+nmap <Leader>nop :set nopaste<CR>
+
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
+
+map q: :q
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('scrooloose/nerdtree', { 'on_cmd': 'NERDTreeToggle' })
+  call dein#add('ervandew/supertab')
+  call dein#add('wincent/command-t')
+  
+  call dein#add('vim-ruby/vim-ruby')
+  call dein#add('tpope/vim-rails')
+  call dein#add('KurtPreston/vim-autoformat-rails')
+  call dein#add('rking/ag.vim')
+
+  call dein#end()
+  call dein#save_state()
+endif
+
 filetype plugin indent on
+syntax enable
 set number
 
-autocmd Filetype html setlocal ts=2 sts=2 sw=2 
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=2 sts=2 sw=2
-
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     setl ft=ruby tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
-
-set rtp+=~/.vim/bundle/fzf
-
+" Sane mappings for me.
 map <c-e> :NERDTreeToggle<cr>
+let g:NERDTreeWinPos = "right"
+
 map <c-f> :FZF<cr>
 
 map <c-l> :tabn<cr> 
 map <c-h> :tabp<cr> 
 map <c-n> :tabnew<cr>
 
-color codeschool
 
-set guifont=Monaco:h12
-let g:NERDTreeWinPos = "right"
-set guioptions-=T " Removes top toolbar
-set guioptions-=r " Removes right hand scroll bar
-set go-=L " Removes left hand scroll bar
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 
@@ -40,4 +69,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set textwidth=80
-set formatoptions-=t formatoptions+=croql
+
+color codeschool
+
