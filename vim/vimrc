@@ -33,6 +33,11 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('ervandew/supertab')
   call dein#add('wincent/command-t')
   call dein#add('terryma/vim-expand-region')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('chrisbra/csv.vim')
+  call dein#add('powerline/fonts', { 'build': './install.sh' })
   
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('tpope/vim-rails')
@@ -62,6 +67,7 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 
 let g:ag_working_path_mode="r"
+
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
@@ -72,6 +78,21 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set textwidth=80
+set laststatus=2
 
 color codeschool
 
+
+" airline
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+if exists("did_load_csvfiletype")
+  finish
+endif
+let did_load_csvfiletype=1
+
+augroup filetypedetect
+  au! BufRead,BufNewFile *.csv,*.dat    setfiletype csv
+augroup END
