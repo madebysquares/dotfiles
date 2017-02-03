@@ -32,6 +32,7 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('scrooloose/nerdtree', { 'on_cmd': 'NERDTreeToggle' })
   call dein#add('ervandew/supertab')
   call dein#add('wincent/command-t')
+  call dein#add('terryma/vim-expand-region')
   
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('tpope/vim-rails')
@@ -61,6 +62,8 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 
 let g:ag_working_path_mode="r"
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " Formatting, indentation and tabbing
 set autoindent smartindent
