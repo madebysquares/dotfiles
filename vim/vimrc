@@ -63,6 +63,7 @@ map <c-l> :tabn<cr>
 map <c-h> :tabp<cr> 
 map <c-n> :tabnew<cr>
 
+autocmd BufWritePre * %s/\s\+$//e
 
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands

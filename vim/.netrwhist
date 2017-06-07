@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/harry/.ssh'
 let g:netrw_dirhist_2='/Users/harry/Documents'
 let g:netrw_dirhist_3='/home/harry/dotfiles'
 let g:netrw_dirhist_4='/home/harry/S/drb-student-los'
 let g:netrw_dirhist_5='/home/harry/S/drb-student-los/node_modules/package-json'
 let g:netrw_dirhist_6='/home/harry/.vim'
+let g:netrw_dirhist_7='/home/dj_khaled/repos/drb-student-los/lib/tasks/v01_50_00_data_load'
