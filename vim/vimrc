@@ -39,7 +39,7 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('chrisbra/csv.vim')
   call dein#add('powerline/fonts', { 'build': './install.sh' })
   call dein#add('godlygeek/tabular')
-  
+
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('tpope/vim-rails')
   call dein#add('KurtPreston/vim-autoformat-rails')
@@ -59,8 +59,8 @@ let g:NERDTreeWinPos = "right"
 
 map <c-f> :FZF<cr>
 
-map <c-l> :tabn<cr> 
-map <c-h> :tabp<cr> 
+map <c-l> :tabn<cr>
+map <c-h> :tabp<cr>
 map <c-n> :tabnew<cr>
 
 autocmd BufWritePre * %s/\s\+$//e
@@ -69,6 +69,11 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 
 let g:ag_working_path_mode="r"
+
+" if executable('ag')
+"   set grepprg=ag\ --nogroup\ --nocolor\ --column
+"   set grepformat=%f:%l:%c%m
+" endif
 
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -82,8 +87,10 @@ set shiftwidth=2
 set textwidth=80
 set laststatus=2
 
+color grb256
+" color mayansmoke
 " color PapayaWhip
-color mayansmoke
+" color codeschool
 
 
 " airline
